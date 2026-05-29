@@ -1,0 +1,21 @@
+@layer tokens {
+  :host {
+    --btn-size: auto;
+    --btn-height: var(--size-control);
+    --btn-radius: var(--radius-control);
+    --btn-font-size: var(--font-size-body);
+    --btn-line-height: var(--line-height-body);
+    --btn-font-weight: var(--font-weight-control);
+    --btn-color: var(--color-text-body);
+    --btn-ghost-bg: transparent;
+    --btn-padding: var(--spacing-sm);
+    --btn-ghost-hover-bg: var(--color-hover-fill);
+    --btn-primary-bg: var(--color-interactive-primary);
+    --btn-primary-color: var(--color-interactive-primary-text);
+    --btn-primary-hover-bg: color-mix(in srgb, var(--color-interactive-primary) 85%, black);
+    --btn-disabled-color: var(--color-text-disabled);
+    --btn-disabled-opacity: 0.5;
+    --btn-icon-padding: var(--spacing-xs);
+    --btn-icon-radius: var(--radius-full);
+  }
+}

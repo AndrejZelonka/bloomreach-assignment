@@ -15,6 +15,9 @@ export class DateRangePickerComponent {
 
   protected readonly isOpen = signal(false);
 
+  protected readonly startDate = new Date(2025, 2, 10);
+  protected readonly endDate = new Date(2025, 2, 24);
+
   protected onToggle(): void {
     this.isOpen.update((open) => !open);
   }

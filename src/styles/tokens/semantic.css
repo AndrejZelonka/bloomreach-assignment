@@ -8,6 +8,7 @@
     --line-height-label: var(--line-height-xs);
     --font-size-body: var(--font-size-sm);
     --line-height-body: var(--line-height-md);
+    --font-weight-control: var(--font-weight-semibold);
 
     /* Text */
     --color-text-body: var(--color-slate-700);

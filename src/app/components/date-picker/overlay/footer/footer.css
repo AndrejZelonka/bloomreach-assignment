@@ -1,2 +1,30 @@
+@import '../../../../../styles/tokens/components/date-picker.css';
+
 @layer components {
+  :host {
+    display: flex;
+    align-items: center;
+    gap: var(--footer-gap);
+    margin-top: var(--footer-margin-top);
+    padding-top: var(--footer-padding-top);
+    border-top: var(--footer-separator-width) solid var(--footer-separator-color);
+  }
+
+  .footer-summary {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: var(--footer-summary-min-height);
+    font-size: var(--footer-font-size);
+    line-height: var(--footer-line-height);
+  }
+
+  .summary-meta {
+    color: var(--footer-summary-meta-color);
+  }
+
+  .footer-actions {
+    display: flex;
+    gap: var(--footer-actions-gap);
+  }
 }

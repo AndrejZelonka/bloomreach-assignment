@@ -1,1 +1,12 @@
-<p>footer works!</p>
+<div class="footer-summary">
+  @if (rangeText()) {
+    <span class="summary-range">{{ rangeText() }}</span>
+    @if (startDate()) {
+      <span class="summary-meta">({{ dayCount() }} {{ dayCount() === 1 ? 'day' : 'days' }}, {{ timezone() }})</span>
+    }
+  }
+</div>
+<div class="footer-actions">
+  <ui-button ariaLabel="Cancel" variant="ghost" spacing="sm" (clicked)="closed.emit()">Cancel</ui-button>
+  <ui-button ariaLabel="Apply" variant="primary" spacing="sm" (clicked)="closed.emit()">Apply</ui-button>
+</div>

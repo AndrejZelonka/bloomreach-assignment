@@ -1,0 +1,10 @@
+<button
+  type="button"
+  [class]="'btn btn--' + variant() + ' btn--spacing-' + spacing()"
+  [attr.aria-label]="ariaLabel()"
+  [disabled]="disabled() || null"
+  (click)="clicked.emit()"
+  (mouseenter)="hovered.emit()"
+>
+  <ng-content />
+</button>

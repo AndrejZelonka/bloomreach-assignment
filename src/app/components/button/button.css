@@ -1,0 +1,51 @@
+@import '../../../styles/tokens/components/button.css';
+
+@layer components {
+  .btn {
+    height: var(--btn-height);
+    width: var(--btn-size);
+    all: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+    border-radius: var(--btn-radius);
+    font-size: var(--btn-font-size);
+    line-height: var(--btn-line-height);
+    font-weight: var(--btn-font-weight);
+    font-family: inherit;
+    color: var(--btn-color);
+    cursor: pointer;
+    &:disabled {
+      color: var(--btn-disabled-color);
+      opacity: var(--btn-disabled-opacity);
+      cursor: default;
+      pointer-events: none;
+    }
+  }
+
+  .btn--spacing-sm {
+    padding: var(--btn-padding);
+  }
+
+  .btn--spacing-none {
+    padding: 0;
+  }
+
+  .btn--ghost {
+    background: var(--btn-ghost-bg);
+
+    &:hover {
+      background: var(--btn-ghost-hover-bg);
+    }
+  }
+
+  .btn--primary {
+    background: var(--btn-primary-bg);
+    color: var(--btn-primary-color);
+
+    &:hover {
+      background: var(--btn-primary-hover-bg);
+    }
+  }
+}

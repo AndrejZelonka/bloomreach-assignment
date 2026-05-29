@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { Calendar } from './calendar/calendar';
 import { Footer } from './footer/footer';
 import { Presets } from './presets/presets';
@@ -10,4 +10,7 @@ import { Presets } from './presets/presets';
   templateUrl: './overlay.html',
   styleUrl: './overlay.css',
 })
-export class Overlay {}
+export class Overlay {
+  readonly startDate = input<Date | null>(null);
+  readonly endDate = input<Date | null>(null);
+}
