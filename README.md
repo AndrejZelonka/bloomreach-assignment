@@ -1,59 +1,45 @@
-# BloomreachAssignment
+# Notes
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.13.
+I experimented with a premeditated CSS architecture focused on strict token layering, component isolation, and long-term scalability. The architecture rules are documented inside the Claude `SKILLs` folder under `css-architecture`.
 
-## Development server
+I added this primarily to align AI-assisted code generation with the conventions and constraints used in the project.
 
-To start a local development server, run:
+I also customized the Angular `ng generate component` workflow slightly so generated components automatically follow the CSS architecture conventions. Additionally, I added linting rules to help enforce component layer boundaries and styling consistency.
 
-```bash
-ng serve
-```
+## Reusable Components / Design System Direction
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+During development I built several reusable UI pieces that would likely make sense to decouple into a standalone design system.
 
-## Code scaffolding
+I think several internal parts of the date-picker could eventually become standalone design-system components as well.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Date Picker
 
-```bash
-ng generate component component-name
-```
+The date-picker currently exposes a relatively small API surface, including:
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- `onRangeChange`
+- `label`
+- `presets`
+- `allowCustomRangePreset`
 
-```bash
-ng generate --help
-```
+The `presets` property allows passing a custom sidebar configuration for predefined ranges (Lifetime, Today). This was implemented to make the component more flexible and adaptable.
+Custom range option slightly complicated this approach, because the custom range behavior depends on the internal state of the component itself.
+To avoid coupling that logic directly to the configurable preset system, I introduced a dedicated flag `allowCustomRangePreset` for enabling custom range handling separately from the other presets, which are intended to remain fully configurable and externally driven.
 
-## Building
+## Tradeoffs & Improvements
 
-To build the project run:
+The architecture itself was intentionally experimental, and in retrospect it may not be the ideal fit in every area. Some parts likely introduce additional complexity compared to the practical benefit they currently provide. Still, it was a useful exploration of stricter CSS layering and token-driven design systems.
 
-```bash
-ng build
-```
+If I had more time, the highest priorities would be:
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+- improving visual polish and pixel-perfect consistency across some UI areas
+- revisiting overall sizing and spacing scale, as parts of the UI currently feel slightly oversized or inconsistent
+- better test coverage
+- improving the internal date-picker API
+- simplifying selection logic and edge-case handling
+- extracting additional reusable standalone components
+- improving accessibility (keyboard navigation, screen readers, focus management)
+- proper localization/internationalization support
+- fix some hacky CSS workarounds
+- overlay positioning: the current implementation uses simple absolute positioning relative to the trigger element, which breaks near viewport edges. A proper solution would detect available space and flip or reposition the overlay accordingly (similar to floating-ui or Popper.js). This is a known gap.
 
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+The date-picker implementation works, but the internal APIs and state management could definitely be cleaner and more maintainable. There are also several edge cases around date selection and range handling that would benefit from additional refinement and testing.
