@@ -1,0 +1,6 @@
+{
+  "plugins": ["./stylelint-plugins/require-layer-wrapper.js"],
+  "rules": {
+    "custom/require-layer-components-wrapper": true
+  }
+}

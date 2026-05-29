@@ -1,0 +1,10 @@
+{
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "component": {
+      "description": "Creates a new Angular component with CSS pre-wrapped in @layer components.",
+      "factory": "./component/index#component",
+      "schema": "./component/schema.json"
+    }
+  }
+}

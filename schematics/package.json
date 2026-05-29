@@ -1,0 +1,6 @@
+{
+  "name": "bloomreach-assignment-schematics",
+  "version": "0.0.0",
+  "private": true,
+  "schematics": "./collection.json"
+}
