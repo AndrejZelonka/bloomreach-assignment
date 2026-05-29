@@ -1,3 +1,10 @@
 <main class="main">
-  <date-picker label="Date picker label" [presets]="presets" />
+  <div class="presentation">
+    <date-picker
+      label="Date picker label"
+      [presets]="presets"
+      (rangeChange)="onRangeChange($event)"
+      [allowCustomRangePreset]="true"
+    />
+  </div>
 </main>
