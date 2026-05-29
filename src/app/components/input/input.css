@@ -3,6 +3,8 @@
 @layer components {
   :host {
     display: block;
+    width: auto;
+    max-width: 100%;
   }
 
   .text-input__control {
@@ -17,6 +19,8 @@
 
   .text-input__icon {
     position: absolute;
+    top: 50%;
+    transform: translateY(-55%);
     color: var(--input-icon-color);
     width: var(--input-icon-size);
     height: var(--input-icon-size);

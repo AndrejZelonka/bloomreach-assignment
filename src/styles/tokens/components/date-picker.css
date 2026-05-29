@@ -69,7 +69,7 @@
     --day-btn-disabled-opacity: 0.5;
     --day-btn-start-end-bg: var(--color-interactive-accent);
     --day-btn-start-end-color: var(--color-text-inverse);
-    --day-btn-start-end-font-weight: 600;
+    --day-btn-start-end-font-weight: var(--font-weight-control);
     --day-btn-start-end-hover-bg: color-mix(in srgb, var(--color-interactive-accent) 85%, black);
     --day-btn-in-range-bg: var(--color-range-fill);
     --day-btn-in-range-hover-bg: var(--color-range-fill-hover);

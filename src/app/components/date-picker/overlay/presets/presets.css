@@ -44,9 +44,20 @@
     }
   }
 
+  .preset-btn__label {
+    &::after {
+      content: attr(data-label);
+      font-weight: var(--presets-btn-active-font-weight);
+      display: block;
+      height: 0;
+      overflow: hidden;
+      visibility: hidden;
+    }
+  }
+
   .preset-btn__check {
     flex-shrink: 0;
     visibility: hidden;
-  width: var(--presets-btn-icon-size);
+    width: var(--presets-btn-icon-size);
   }
 }
