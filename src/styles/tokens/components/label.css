@@ -1,0 +1,7 @@
+@layer tokens {
+  :host {
+    --label-text: var(--color-text-primary);
+    --label-font-size: var(--font-size-label);
+    --label-line-height: var(--line-height-label);
+  }
+}

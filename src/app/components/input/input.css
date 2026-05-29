@@ -1,0 +1,75 @@
+@import '../../../styles/tokens/components/input.css';
+
+@layer components {
+  :host {
+    display: block;
+  }
+
+  .text-input__control {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    &:hover .text-input__field {
+      border-color: var(--input-border-hover);
+    }
+  }
+
+  .text-input__icon {
+    position: absolute;
+    color: var(--input-icon-color);
+    width: var(--input-icon-size);
+    height: var(--input-icon-size);
+    pointer-events: none;
+  }
+
+  .text-input__icon--leading {
+    left: var(--input-padding-inline);
+  }
+
+  .text-input__icon--trailing {
+    right: var(--input-padding-inline);
+  }
+
+  .text-input__field {
+    width: 100%;
+    min-height: var(--input-min-height);
+    padding-block: var(--input-padding-block);
+    padding-inline: var(--input-padding-inline);
+    background: var(--input-bg);
+    border: var(--input-border-width) solid var(--input-border);
+    border-radius: var(--input-radius);
+    color: var(--input-text);
+    font-size: var(--input-font-size);
+    line-height: var(--input-line-height);
+    font-family: inherit;
+    caret-color: transparent;
+
+    &::placeholder {
+      color: var(--input-placeholder);
+    }
+
+    &:focus-visible {
+      outline: var(--input-outline-width) solid var(--input-border-focus);
+      outline-offset: var(--input-outline-offset);
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: default;
+      pointer-events: none;
+    }
+  }
+
+  .text-input__field--has-leading {
+    padding-inline-start: calc(
+      var(--input-padding-inline) + var(--input-icon-size) + var(--input-gap)
+    );
+  }
+
+  .text-input__field--has-trailing {
+    padding-inline-end: calc(
+      var(--input-padding-inline) + var(--input-icon-size) + var(--input-gap)
+    );
+  }
+}

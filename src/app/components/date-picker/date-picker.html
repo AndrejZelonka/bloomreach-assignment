@@ -1,0 +1,17 @@
+<div class="trigger">
+  <app-label [label]="label()" />
+  <app-input
+    [value]="''"
+    placeholder="mm/dd/yyyy"
+    [readOnly]="true"
+    [leadingIcon]="'calendar'"
+    [trailingIcon]="'chevron-down'"
+    (click)="onToggle()"
+  />
+</div>
+
+@if (isOpen()) {
+  <div class="overlay-placeholder" role="dialog" aria-label="Date picker" aria-modal="true">
+    <p>Overlay placeholder</p>
+  </div>
+}

@@ -1,0 +1,13 @@
+@layer tokens {
+  :host {
+    --date-picker-trigger-gap: var(--space-1);
+    --date-picker-overlay-bg: var(--color-bg-base);
+    --date-picker-overlay-border-width: var(--border-width-default);
+    --date-picker-overlay-border-color: var(--color-border-default);
+    --date-picker-overlay-radius: var(--radius-overlay);
+    --date-picker-overlay-padding: var(--space-4);
+    --date-picker-overlay-offset: var(--space-2);
+    --date-picker-overlay-shadow: var(--shadow-overlay);
+    --date-picker-overlay-z: var(--z-overlay);
+  }
+}

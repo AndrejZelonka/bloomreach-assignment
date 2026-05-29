@@ -1,0 +1,26 @@
+@import '../../../styles/tokens/components/date-picker.css';
+
+@layer components {
+  :host {
+    display: inline-block;
+    position: relative;
+  }
+
+  .trigger {
+    display: flex;
+    flex-direction: column;
+    gap: var(--date-picker-trigger-gap);
+  }
+
+  .overlay-placeholder {
+    position: absolute;
+    top: calc(100% + var(--date-picker-overlay-offset));
+    left: 0;
+    background: var(--date-picker-overlay-bg);
+    border: var(--date-picker-overlay-border-width) solid var(--date-picker-overlay-border-color);
+    border-radius: var(--date-picker-overlay-radius);
+    padding: var(--date-picker-overlay-padding);
+    box-shadow: var(--date-picker-overlay-shadow);
+    z-index: var(--date-picker-overlay-z);
+  }
+}

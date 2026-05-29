@@ -1,0 +1,22 @@
+@layer tokens {
+  :host {
+    --input-min-height: var(--size-control);
+    --input-bg: var(--color-bg-base);
+    --input-border-width: var(--border-width-default);
+    --input-border: var(--color-border-default);
+    --input-border-hover: var(--color-interactive-accent);
+    --input-border-focus: var(--color-border-focus);
+    --input-text: var(--color-text-body);
+    --input-placeholder: var(--color-text-secondary);
+    --input-icon-color: var(--color-text-body);
+    --input-radius: var(--radius-control);
+    --input-font-size: var(--font-size-body);
+    --input-line-height: var(--line-height-body);
+    --input-outline-width: var(--outline-width-focus);
+    --input-outline-offset: var(--outline-offset-focus);
+    --input-padding-block: var(--space-1-5);
+    --input-padding-inline: var(--space-2);
+    --input-icon-size: var(--size-icon);
+    --input-gap: var(--space-2);
+  }
+}

@@ -1,0 +1,20 @@
+<div class="text-input__control">
+  @if (leadingIcon(); as icon) {
+    <app-icon class="text-input__icon text-input__icon--leading" [name]="icon" />
+  }
+
+  <input
+    type="text"
+    class="text-input__field"
+    [class.text-input__field--has-leading]="leadingIcon()"
+    [class.text-input__field--has-trailing]="trailingIcon()"
+    [value]="value()"
+    [placeholder]="placeholder()"
+    [disabled]="disabled()"
+    [attr.readonly]="readOnly() ? '' : null"
+  />
+
+  @if (trailingIcon(); as icon) {
+    <app-icon class="text-input__icon text-input__icon--trailing" [name]="icon" />
+  }
+</div>
