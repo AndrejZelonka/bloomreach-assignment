@@ -9,5 +9,73 @@
     --date-picker-overlay-offset: var(--space-2);
     --date-picker-overlay-shadow: var(--shadow-overlay);
     --date-picker-overlay-z: var(--z-overlay);
+
+    /* Overlay body */
+    --overlay-body-gap: var(--space-2);
+    --overlay-body-padding-block: 0;
+    --overlay-body-padding-inline: 0;
+
+    /* Shared interactive button */
+    --date-picker-btn-radius: var(--radius-md);
+    --date-picker-btn-color: var(--color-text-body);
+    --date-picker-btn-hover-bg: var(--color-hover-fill);
+    --date-picker-btn-active-bg: var(--color-range-fill);
+
+    /* Presets */
+    --presets-btn-icon-size: var(--size-icon-xs);
+    --presets-padding-inline: var(--spacing-sm);
+    --presets-btn-gap: var(--spacing-sm);
+    --presets-btn-padding-block: var(--spacing-xs);
+    --presets-btn-padding-inline: var(--spacing-sm);
+    --presets-btn-font-size: var(--font-size-label);
+    --presets-btn-line-height: var(--line-height-label);
+    --presets-btn-active-font-weight: var(--font-weight-control);
+
+    /* Footer */
+    --footer-font-size: var(--font-size-label);
+    --footer-line-height: var(--line-height-label);
+    --footer-summary-min-height: var(--size-cell);
+    --footer-summary-meta-color: var(--color-text-secondary);
+    --footer-gap: var(--spacing-md);
+    --footer-actions-gap: var(--spacing-sm);
+    --footer-margin-top: var(--spacing-md);
+    --footer-padding-top: var(--spacing-md);
+    --footer-separator-color: var(--color-separator);
+    --footer-separator-width: var(--border-width-default);
+
+    /* Calendar heading */
+    --calendar-heading-font-size: var(--font-size-label);
+    --calendar-heading-font-weight: var(--font-weight-control);
+    --calendar-heading-line-height: var(--line-height-sm);
+    --calendar-separator-width: var(--border-width-default);
+
+    /* Calendar layout */
+    --calendar-months-column-gap: var(--spacing-md);
+    --calendar-months-row-gap: var(--spacing-sm);
+    --calendar-nav-placeholder-size: var(--size-icon-btn);
+
+    /* Calendar month */
+    --calendar-month-cell-size: var(--size-cell);
+    --calendar-month-cell-spacing: var(--spacing-sm);
+    --calendar-month-heading-color: var(--color-text-primary);
+    --calendar-month-weekday-font-size: var(--font-size-label);
+    --calendar-month-weekday-line-height: var(--line-height-label);
+    --calendar-month-weekday-color: var(--color-text-primary);
+    --calendar-month-weekday-font-weight: bold;
+    --calendar-month-day-disabled-color: var(--color-text-disabled);
+    --calendar-month-day-today-font-weight: bold;
+
+    /* Day button */
+    --day-btn-font-size: var(--font-size-label);
+    --day-btn-disabled-opacity: 0.5;
+    --day-btn-start-end-bg: var(--color-interactive-accent);
+    --day-btn-start-end-color: var(--color-text-inverse);
+    --day-btn-start-end-font-weight: 600;
+    --day-btn-start-end-hover-bg: color-mix(in srgb, var(--color-interactive-accent) 85%, black);
+    --day-btn-in-range-bg: var(--color-range-fill);
+    --day-btn-in-range-hover-bg: var(--color-range-fill-hover);
+    --day-btn-hover-preview-in-range-bg: var(--color-hover-preview-fill);
+    --day-btn-hover-preview-endpoint-bg: var(--color-hover-preview-endpoint);
+    --day-btn-hover-preview-endpoint-color: var(--color-text-inverse);
   }
 }

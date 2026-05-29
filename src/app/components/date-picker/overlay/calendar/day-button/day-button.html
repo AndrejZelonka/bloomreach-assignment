@@ -1,0 +1,10 @@
+<button
+  type="button"
+  class="day-btn"
+  [class.is-today]="isToday()"
+  [attr.aria-label]="ariaLabel()"
+  [disabled]="disabled() || null"
+  (click)="clicked.emit()"
+>
+  <ng-content />
+</button>

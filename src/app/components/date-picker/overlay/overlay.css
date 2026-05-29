@@ -13,6 +13,7 @@
     border: var(--date-picker-overlay-border-width) solid var(--date-picker-overlay-border-color);
     border-radius: var(--date-picker-overlay-radius);
     box-shadow: var(--date-picker-overlay-shadow);
+    padding: var(--date-picker-overlay-padding);
   }
 
   .overlay-layout {

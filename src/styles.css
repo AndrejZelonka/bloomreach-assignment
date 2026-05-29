@@ -29,4 +29,10 @@
     white-space: nowrap;
     border: 0;
   }
+
+  .separator {
+    width: 1px;
+    align-self: stretch;
+    background-color: var(--color-separator);
+  }
 }

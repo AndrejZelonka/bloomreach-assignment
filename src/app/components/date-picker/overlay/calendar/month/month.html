@@ -1,1 +1,26 @@
-<p>month works!</p>
+<div class="calendar-month__grid" role="grid" [attr.aria-label]="heading()">
+  <div class="calendar-month__row" role="row">
+    @for (day of weekDays; track day.ariaLabel) {
+      <div class="calendar-month__weekday" role="columnheader" [attr.aria-label]="day.ariaLabel">
+        {{ day.label }}
+      </div>
+    }
+  </div>
+  @for (week of processedGrid(); track $index) {
+    <div class="calendar-month__row" role="row">
+      @for (cell of week; track $index) {
+        <div class="calendar-month__cell" role="gridcell">
+          @if (cell) {
+            <date-picker-day-btn
+              [ariaLabel]="cell.ariaLabel"
+              [disabled]="cell.isDisabled"
+              [isToday]="cell.isToday"
+              (clicked)="onDayClick(cell.date)"
+              >{{ cell.dayNumber }}</date-picker-day-btn
+            >
+          }
+        </div>
+      }
+    </div>
+  }
+</div>

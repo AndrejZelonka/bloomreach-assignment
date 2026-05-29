@@ -1,1 +1,17 @@
-<date-picker-month />
+<div class="calendar__months">
+  <div class="calendar__heading calendar__heading--primary">{{ primaryHeading() }}</div>
+  <div class="calendar__heading calendar__heading--secondary">{{ secondaryHeading() }}</div>
+  <date-picker-month
+    class="calendar__month--primary"
+    [daysGrid]="primaryGrid()"
+    [heading]="primaryHeading()"
+    (dayClick)="onDayClick($event)"
+  />
+  <div class="separator calendar__separator"></div>
+  <date-picker-month
+    class="calendar__month--secondary"
+    [daysGrid]="secondaryGrid()"
+    [heading]="secondaryHeading()"
+    (dayClick)="onDayClick($event)"
+  />
+</div>

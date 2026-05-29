@@ -1,0 +1,37 @@
+@import '../../../../../../styles/tokens/components/calendar-month.css';
+
+@layer components {
+  :host {
+    display: contents;
+  }
+
+  .day-btn {
+    all: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--calendar-month-cell-size);
+    height: var(--calendar-month-cell-size);
+    border-radius: var(--date-picker-btn-radius);
+    font-size: var(--day-btn-font-size);
+    color: var(--date-picker-btn-color);
+    cursor: pointer;
+    box-sizing: border-box;
+    position: relative;
+
+    &:hover {
+      background: var(--calendar-month-day-hover-bg);
+    }
+
+    &.is-today {
+      font-weight: var(--calendar-month-day-today-font-weight);
+    }
+
+    &:disabled {
+      color: var(--calendar-month-day-disabled-color);
+      opacity: var(--day-btn-disabled-opacity);
+      cursor: default;
+      pointer-events: none;
+    }
+  }
+}

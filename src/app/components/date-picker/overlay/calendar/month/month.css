@@ -1,2 +1,30 @@
+@import '../../../../../../styles/tokens/components/calendar-month.css';
+
 @layer components {
+  :host {
+    display: block;
+  }
+
+  .calendar-month__row {
+    display: grid;
+    grid-template-columns: repeat(7, var(--calendar-month-cell-size));
+  }
+
+  .calendar-month__weekday,
+  .calendar-month__cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--calendar-month-cell-size);
+    height: var(--calendar-month-cell-size);
+    margin-top: var(--calendar-month-cell-spacing);
+  }
+
+  .calendar-month__weekday {
+    font-size: var(--calendar-month-weekday-font-size);
+    font-weight: var(--calendar-month-weekday-font-weight);
+    line-height: var(--calendar-month-weekday-line-height);
+    color: var(--calendar-month-weekday-color);
+  }
+
 }

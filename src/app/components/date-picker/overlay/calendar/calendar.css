@@ -1,2 +1,30 @@
+@import '../../../../../styles/tokens/components/calendar-month.css';
+
 @layer components {
+  .calendar__months {
+    display: grid;
+    grid-template-areas:
+      'primary-head .   secondary-head'
+      'primary-grid sep secondary-grid';
+    grid-template-columns: auto var(--calendar-separator-width) auto;
+    column-gap: var(--calendar-months-column-gap);
+    row-gap: var(--calendar-months-row-gap);
+  }
+
+  .calendar__heading--primary   { grid-area: primary-head; }
+  .calendar__heading--secondary { grid-area: secondary-head; }
+  .calendar__month--primary     { grid-area: primary-grid; }
+  .calendar__separator          { grid-area: sep; }
+  .calendar__month--secondary   { grid-area: secondary-grid; }
+
+  .calendar__heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: var(--calendar-heading-font-size);
+    font-weight: var(--calendar-heading-font-weight);
+    line-height: var(--calendar-heading-line-height);
+    text-transform: uppercase;
+    color: var(--calendar-month-heading-color);
+  }
 }
