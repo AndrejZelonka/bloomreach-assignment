@@ -1,0 +1,69 @@
+@layer tokens {
+  :root {
+    /* Font */
+    --font-family: var(--font-family-base);
+
+    /* Typography */
+    --font-size-label: var(--font-size-xs);
+    --line-height-label: var(--line-height-xs);
+    --font-size-body: var(--font-size-sm);
+    --line-height-body: var(--line-height-md);
+
+    /* Text */
+    --color-text-body: var(--color-slate-700);
+    --color-text-primary: var(--color-slate-800);
+    --color-text-secondary: var(--color-slate-500);
+    --color-text-inverse: var(--color-white);
+    --color-text-disabled: var(--color-slate-500);
+
+    /* Background */
+    --color-bg-base: var(--color-white);
+
+    /* Interactive */
+    --color-interactive-accent: var(--color-blue-400);
+    --color-interactive-primary: var(--color-yellow-400);
+    --color-interactive-primary-text: var(--color-slate-900);
+
+    /* Range / selection fill */
+    --color-range-fill: color-mix(in srgb, var(--color-blue-400) 10%, transparent);
+    --color-range-fill-hover: color-mix(in srgb, var(--color-blue-400) 20%, transparent);
+    --color-hover-fill: color-mix(in srgb, var(--color-slate-500) 10%, transparent);
+    --color-hover-preview-fill: color-mix(in srgb, var(--color-blue-400) 10%, var(--color-white));
+    --color-hover-preview-endpoint: color-mix(
+      in srgb,
+      var(--color-blue-400) 55%,
+      var(--color-white)
+    );
+
+    /* Borders */
+    --color-border-default: var(--color-slate-200);
+    --color-border-focus: var(--color-blue-400);
+    --color-separator: var(--color-slate-100);
+    --border-width-default: var(--border-width);
+
+    /* Outline */
+    --outline-width-focus: var(--outline-width);
+    --outline-offset-focus: var(--outline-offset);
+
+    /* Today indicator */
+    --color-today-indicator: var(--color-yellow-400);
+
+    /* Shadows */
+    --shadow-overlay: var(--shadow-md);
+
+    /* Border radius */
+    --radius-control: var(--radius-sm);
+    --radius-overlay: var(--radius-md);
+
+    /* Sizes */
+    --size-icon: var(--size-3-5);
+    --size-icon-btn: var(--size-8);
+    --size-cell: var(--size-6);
+    --size-control: var(--size-9);
+    --size-panel: var(--size-40);
+
+    /* Z-index */
+    --z-dropdown: var(--z-10);
+    --z-overlay: var(--z-20);
+  }
+}
