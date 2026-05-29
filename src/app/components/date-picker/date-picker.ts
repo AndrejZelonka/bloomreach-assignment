@@ -1,11 +1,12 @@
 import { ChangeDetectionStrategy, Component, input, signal } from '@angular/core';
 import { Input } from '../input/input';
 import { Label } from '../label/label';
+import { Overlay } from './overlay/overlay';
 
 @Component({
   selector: 'date-picker',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [Input, Label],
+  imports: [Input, Label, Overlay],
   templateUrl: './date-picker.html',
   styleUrl: './date-picker.css',
 })
