@@ -23,6 +23,10 @@
     color: var(--footer-summary-meta-color);
   }
 
+  .is-hidden {
+    visibility: hidden;
+  }
+
   .footer-actions {
     display: flex;
     gap: var(--footer-actions-gap);

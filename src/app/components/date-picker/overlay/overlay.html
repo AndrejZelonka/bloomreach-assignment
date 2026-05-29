@@ -1,7 +1,30 @@
 <div class="container overlay-layout">
   <div class="overlay-body">
-    <date-picker-calendar />
-    <date-picker-presets />
+    <date-picker-calendar
+      [viewMonth]="viewMonth()"
+      [pendingStart]="pendingStart()"
+      [pendingEnd]="pendingEnd()"
+      [hoverDate]="hoverDate()"
+      [showHoverPreview]="showHoverPreview()"
+      [minDate]="minDate()"
+      [maxDate]="maxDate()"
+      (monthNavigated)="onMonthNavigated($event)"
+      (dayClick)="onDayClick($event)"
+      (dayHover)="onDayHover($event)"
+      (calendarLeave)="onCalendarLeave()"
+    />
+    <date-picker-presets
+      [presets]="presets()"
+      [activePreset]="pendingPreset()"
+      (presetSelected)="onPresetSelected($event)"
+    />
   </div>
-  <date-picker-footer [startDate]="startDate()" [endDate]="endDate()" />
+  <date-picker-footer
+    [startDate]="pendingStart()"
+    [endDate]="pendingEnd()"
+    [dayCount]="pendingDayCount()"
+    [timezone]="timezone"
+    (cancelled)="onCancel()"
+    (applied)="onApply()"
+  />
 </div>

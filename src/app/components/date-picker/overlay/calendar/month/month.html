@@ -15,7 +15,13 @@
               [ariaLabel]="cell.ariaLabel"
               [disabled]="cell.isDisabled"
               [isToday]="cell.isToday"
+              [isStart]="cell.isStart"
+              [isEnd]="cell.isEnd"
+              [isInRange]="cell.isInRange"
+              [isHoverPreviewInRange]="cell.isHoverPreviewInRange"
+              [isHoverPreviewEndpoint]="cell.isHoverPreviewEndpoint"
               (clicked)="onDayClick(cell.date)"
+              (mouseenter)="onDayHover(cell.date)"
               >{{ cell.dayNumber }}</date-picker-day-btn
             >
           }

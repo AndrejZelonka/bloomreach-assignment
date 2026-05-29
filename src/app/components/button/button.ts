@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
 
-export const BUTTON_VARIANTS = ['ghost', 'primary'] as const;
+export const BUTTON_VARIANTS = ['ghost', 'primary', 'icon'] as const;
 export type ButtonVariant = (typeof BUTTON_VARIANTS)[number];
 
 export const BUTTON_SPACINGS = ['sm', 'none'] as const;

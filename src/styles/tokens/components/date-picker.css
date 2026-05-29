@@ -44,6 +44,14 @@
     --footer-separator-color: var(--color-separator);
     --footer-separator-width: var(--border-width-default);
 
+    /* Calendar heading */
+    --calendar-heading-font-size: var(--font-size-label);
+    --calendar-heading-line-height: var(--line-height-sm);
+
+    /* Calendar layout */
+    --calendar-months-column-gap: var(--spacing-md);
+    --calendar-months-row-gap: var(--spacing-sm);
+    --calendar-nav-placeholder-size: var(--size-icon-btn);
 
     /* Calendar month */
     --calendar-month-cell-size: var(--size-cell);

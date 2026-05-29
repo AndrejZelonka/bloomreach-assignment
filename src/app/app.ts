@@ -1,5 +1,6 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { DateRangePickerComponent } from './components/date-picker/date-picker';
+import { PRESETS } from './presets/presets';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,5 @@ import { DateRangePickerComponent } from './components/date-picker/date-picker';
   imports: [DateRangePickerComponent],
 })
 export class App {
-  protected readonly title = signal('bloomreach-assignment');
+  protected readonly presets = PRESETS;
 }

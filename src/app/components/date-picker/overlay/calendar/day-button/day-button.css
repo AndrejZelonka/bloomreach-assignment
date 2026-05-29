@@ -33,5 +33,37 @@
       cursor: default;
       pointer-events: none;
     }
+
+    &.is-start,
+    &.is-end {
+      background: var(--day-btn-start-end-bg);
+      color: var(--day-btn-start-end-color);
+      font-weight: var(--day-btn-start-end-font-weight);
+
+      &:hover {
+        background: var(--day-btn-start-end-hover-bg);
+      }
+    }
+
+    &.is-in-range {
+      background: var(--day-btn-in-range-bg);
+      border-radius: 0;
+      width: 100%;
+
+      &:hover {
+        background: var(--day-btn-in-range-hover-bg);
+      }
+    }
+
+    &.is-hover-preview-in-range {
+      background: var(--day-btn-hover-preview-in-range-bg);
+      border-radius: 0;
+      width: 100%;
+    }
+
+    &.is-hover-preview-endpoint {
+      background: var(--day-btn-hover-preview-endpoint-bg);
+      color: var(--day-btn-hover-preview-endpoint-color);
+    }
   }
 }

@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
 
-const ICON_NAMES = ['calendar', 'chevron-down', 'check'] as const;
+const ICON_NAMES = ['calendar', 'chevron-down', 'chevron-left', 'chevron-right', 'check'] as const;
 export type IconName = (typeof ICON_NAMES)[number];
 
 @Component({

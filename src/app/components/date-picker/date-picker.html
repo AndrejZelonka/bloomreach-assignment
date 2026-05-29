@@ -1,7 +1,7 @@
 <div class="trigger">
   <app-label [label]="label()" />
   <app-input
-    [value]="''"
+    [value]="formattedRange() ?? ''"
     placeholder="mm/dd/yyyy"
     [readOnly]="true"
     [leadingIcon]="'calendar'"
@@ -11,5 +11,11 @@
 </div>
 
 @if (isOpen()) {
-  <date-picker-overlay role="dialog" aria-label="Date picker" aria-modal="true" [startDate]="startDate" [endDate]="endDate" />
+  <date-picker-overlay
+    [committedRange]="committedRange()"
+    [presets]="effectivePresets()"
+    [allowCustomRangePreset]="allowCustomRangePreset()"
+    (cancel)="onCancel()"
+    (apply)="onApply($event)"
+  />
 }

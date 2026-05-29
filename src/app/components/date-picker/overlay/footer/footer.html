@@ -1,12 +1,19 @@
 <div class="footer-summary">
-  @if (rangeText()) {
-    <span class="summary-range">{{ rangeText() }}</span>
-    @if (startDate()) {
-      <span class="summary-meta">({{ dayCount() }} {{ dayCount() === 1 ? 'day' : 'days' }}, {{ timezone() }})</span>
-    }
-  }
+  <span [class.is-hidden]="!rangeText()">{{ rangeText() }}</span>
+  <span class="summary-meta" [class.is-hidden]="!startDate()"
+    >({{ dayCount() }} {{ dayCount() === 1 ? 'day' : 'days' }}, {{ timezone() }})</span
+  >
 </div>
 <div class="footer-actions">
-  <ui-button ariaLabel="Cancel" variant="ghost" spacing="sm" (clicked)="closed.emit()">Cancel</ui-button>
-  <ui-button ariaLabel="Apply" variant="primary" spacing="sm" (clicked)="closed.emit()">Apply</ui-button>
+  <ui-button ariaLabel="Cancel" variant="ghost" spacing="sm" (clicked)="cancelled.emit()"
+    >Cancel</ui-button
+  >
+  <ui-button
+    ariaLabel="Apply"
+    variant="primary"
+    spacing="sm"
+    [disabled]="!endDate() && !startDate()"
+    (clicked)="applied.emit()"
+    >Apply</ui-button
+  >
 </div>

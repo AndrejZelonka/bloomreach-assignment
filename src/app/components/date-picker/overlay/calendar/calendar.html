@@ -1,17 +1,54 @@
-<div class="calendar__months">
-  <div class="calendar__heading calendar__heading--primary">{{ primaryHeading() }}</div>
-  <div class="calendar__heading calendar__heading--secondary">{{ secondaryHeading() }}</div>
-  <date-picker-month
-    class="calendar__month--primary"
-    [daysGrid]="primaryGrid()"
-    [heading]="primaryHeading()"
-    (dayClick)="onDayClick($event)"
-  />
-  <div class="separator calendar__separator"></div>
-  <date-picker-month
-    class="calendar__month--secondary"
-    [daysGrid]="secondaryGrid()"
-    [heading]="secondaryHeading()"
-    (dayClick)="onDayClick($event)"
-  />
+<div class="calendar" (mouseleave)="calendarLeave.emit()">
+  <div class="calendar__months">
+    <div class="calendar__heading calendar__heading--primary">
+      @if (canGoBack()) {
+        <ui-button variant="icon" spacing="none" ariaLabel="Previous month" (clicked)="onPrev()">
+          <app-icon name="chevron-left" />
+        </ui-button>
+      } @else {
+        <div class="calendar__nav-placeholder"></div>
+      }
+      <span>{{ primaryHeading() }}</span>
+      <div class="calendar__nav-placeholder"></div>
+    </div>
+    <div class="calendar__heading calendar__heading--secondary">
+      <div class="calendar__nav-placeholder"></div>
+      <span>{{ secondaryHeading() }}</span>
+      @if (canGoForward()) {
+        <ui-button variant="icon" spacing="none" ariaLabel="Next month" (clicked)="onNext()">
+          <app-icon name="chevron-right" />
+        </ui-button>
+      } @else {
+        <div class="calendar__nav-placeholder"></div>
+      }
+    </div>
+
+    <date-picker-month
+      class="calendar__month--primary"
+      [daysGrid]="primaryGrid()"
+      [heading]="primaryHeading()"
+      [pendingStart]="pendingStart()"
+      [pendingEnd]="pendingEnd()"
+      [hoverDate]="hoverDate()"
+      [showHoverPreview]="showHoverPreview()"
+      [minDate]="minDate()"
+      [maxDate]="maxDate()"
+      (dayClick)="dayClick.emit($event)"
+      (dayHover)="dayHover.emit($event)"
+    />
+    <div class="separator calendar__separator"></div>
+    <date-picker-month
+      class="calendar__month--secondary"
+      [daysGrid]="secondaryGrid()"
+      [heading]="secondaryHeading()"
+      [pendingStart]="pendingStart()"
+      [pendingEnd]="pendingEnd()"
+      [hoverDate]="hoverDate()"
+      [showHoverPreview]="showHoverPreview()"
+      [minDate]="minDate()"
+      [maxDate]="maxDate()"
+      (dayClick)="dayClick.emit($event)"
+      (dayHover)="dayHover.emit($event)"
+    />
+  </div>
 </div>

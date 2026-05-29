@@ -1,39 +1,64 @@
-import { ChangeDetectionStrategy, Component, computed, signal } from '@angular/core';
-import { addMonths, format } from 'date-fns';
+import { ChangeDetectionStrategy, Component, computed, input, output } from '@angular/core';
+import { addMonths } from 'date-fns';
 import { buildMonthGrid } from '../../utils/build-month-grid/build-month-grid';
+import { formatMonthHeading, toMonthStart } from '../../utils/date-utils';
+import { Button } from '../../../button/button';
+import { IconComponent } from '../../../icon/icon';
 import { Month } from './month/month';
 
 @Component({
   selector: 'date-picker-calendar',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [Month],
+  imports: [Month, Button, IconComponent],
   templateUrl: './calendar.html',
   styleUrl: './calendar.css',
 })
 export class Calendar {
-  private readonly today = new Date();
+  readonly viewMonth = input.required<Date>();
+  readonly pendingStart = input<Date | null>(null);
+  readonly pendingEnd = input<Date | null>(null);
+  readonly hoverDate = input<Date | null>(null);
+  readonly showHoverPreview = input(false);
+  readonly minDate = input<Date | null>(null);
+  readonly maxDate = input<Date | null>(null);
 
-  protected readonly displayYear = signal(this.today.getFullYear());
-  protected readonly displayMonth = signal(this.today.getMonth());
+  readonly monthNavigated = output<Date>();
+  readonly dayClick = output<Date>();
+  readonly dayHover = output<Date>();
+  readonly calendarLeave = output<void>();
 
-  private readonly primaryDate = computed(() => new Date(this.displayYear(), this.displayMonth()));
+  protected readonly secondMonth = computed(() => addMonths(this.viewMonth(), 1));
 
-  private readonly secondaryDate = computed(() => addMonths(this.primaryDate(), 1));
-
-  protected readonly primaryGrid = computed(() =>
-    buildMonthGrid(this.displayYear(), this.displayMonth()),
-  );
-
-  protected readonly primaryHeading = computed(() => format(this.primaryDate(), 'MMMM yyyy'));
-
-  protected readonly secondaryGrid = computed(() => {
-    const d = this.secondaryDate();
-    return buildMonthGrid(d.getFullYear(), d.getMonth());
+  protected readonly primaryGrid = computed(() => {
+    const m = this.viewMonth();
+    return buildMonthGrid(m.getFullYear(), m.getMonth());
   });
 
-  protected readonly secondaryHeading = computed(() => format(this.secondaryDate(), 'MMMM yyyy'));
+  protected readonly secondaryGrid = computed(() => {
+    const m = this.secondMonth();
+    return buildMonthGrid(m.getFullYear(), m.getMonth());
+  });
 
-  protected onDayClick(date: Date): void {
-    console.log('day click', date);
+  protected readonly primaryHeading = computed(() => formatMonthHeading(this.viewMonth()));
+  protected readonly secondaryHeading = computed(() => formatMonthHeading(this.secondMonth()));
+
+  protected readonly canGoBack = computed(() => {
+    const min = this.minDate();
+    if (!min) return true;
+    return toMonthStart(this.viewMonth()) > toMonthStart(min);
+  });
+
+  protected readonly canGoForward = computed(() => {
+    const max = this.maxDate();
+    if (!max) return true;
+    return toMonthStart(this.secondMonth()) < toMonthStart(max);
+  });
+
+  protected onPrev(): void {
+    this.monthNavigated.emit(addMonths(this.viewMonth(), -1));
+  }
+
+  protected onNext(): void {
+    this.monthNavigated.emit(addMonths(this.viewMonth(), 1));
   }
 }

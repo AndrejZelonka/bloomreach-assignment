@@ -8,7 +8,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-   
+
     border-radius: var(--btn-radius);
     font-size: var(--btn-font-size);
     line-height: var(--btn-line-height);
@@ -46,6 +46,16 @@
 
     &:hover {
       background: var(--btn-primary-hover-bg);
+    }
+  }
+
+  .btn--icon {
+    padding: var(--btn-icon-padding);
+    border-radius: var(--btn-icon-radius);
+    background: var(--btn-ghost-bg);
+
+    &:hover {
+      background: var(--btn-ghost-hover-bg);
     }
   }
 }
