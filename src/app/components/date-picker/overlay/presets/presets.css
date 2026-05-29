@@ -1,2 +1,52 @@
+@import '../../../../../styles/tokens/components/date-picker.css';
+
 @layer components {
+  :host {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .presets {
+    padding: 0 var(--presets-padding-inline);
+    overflow-y: auto;
+    flex: 1;
+  }
+
+  .preset-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--presets-btn-gap);
+    width: 100%;
+    padding: var(--presets-btn-padding-block) var(--presets-btn-padding-inline);
+    border-radius: var(--date-picker-btn-radius);
+    font-size: var(--presets-btn-font-size);
+    line-height: var(--presets-btn-line-height);
+    color: var(--date-picker-btn-color);
+    text-align: left;
+    white-space: nowrap;
+
+    &:hover {
+      background: var(--date-picker-btn-hover-bg);
+    }
+
+    &.is-active {
+      background: var(--date-picker-btn-active-bg);
+    }
+
+    &.is-active .preset-btn__label {
+      font-weight: var(--presets-btn-active-font-weight);
+    }
+
+    &.is-active .preset-btn__check {
+      visibility: visible;
+    }
+  }
+
+  .preset-btn__check {
+    flex-shrink: 0;
+    visibility: hidden;
+  width: var(--presets-btn-icon-size);
+  }
 }

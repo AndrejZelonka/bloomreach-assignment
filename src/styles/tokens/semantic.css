@@ -35,6 +35,10 @@
       var(--color-white)
     );
 
+    /* Scrollbar */
+    --scrollbar-width: var(--space-1);
+    --scrollbar-thumb-color: var(--color-hover-fill);
+
     /* Borders */
     --color-border-default: var(--color-slate-200);
     --color-border-focus: var(--color-blue-400);
@@ -56,6 +60,7 @@
     --radius-overlay: var(--radius-md);
 
     /* Sizes */
+    --size-icon-xs: var(--size-2-5);
     --size-icon: var(--size-3-5);
     --size-icon-btn: var(--size-8);
     --size-cell: var(--size-6);
@@ -63,6 +68,7 @@
     --size-panel: var(--size-40);
 
     /* Spacing */
+    --spacing-xs: var(--space-1);
     --spacing-sm: var(--space-2);
     --spacing-md: var(--space-4);
 

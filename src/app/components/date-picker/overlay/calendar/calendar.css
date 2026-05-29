@@ -1,4 +1,4 @@
-@import '../../../../../styles/tokens/components/calendar-month.css';
+@import '../../../../../styles/tokens/components/date-picker.css';
 
 @layer components {
   .calendar__months {
@@ -11,11 +11,21 @@
     row-gap: var(--calendar-months-row-gap);
   }
 
-  .calendar__heading--primary   { grid-area: primary-head; }
-  .calendar__heading--secondary { grid-area: secondary-head; }
-  .calendar__month--primary     { grid-area: primary-grid; }
-  .calendar__separator          { grid-area: sep; }
-  .calendar__month--secondary   { grid-area: secondary-grid; }
+  .calendar__heading--primary {
+    grid-area: primary-head;
+  }
+  .calendar__heading--secondary {
+    grid-area: secondary-head;
+  }
+  .calendar__month--primary {
+    grid-area: primary-grid;
+  }
+  .calendar__separator {
+    grid-area: sep;
+  }
+  .calendar__month--secondary {
+    grid-area: secondary-grid;
+  }
 
   .calendar__heading {
     display: flex;

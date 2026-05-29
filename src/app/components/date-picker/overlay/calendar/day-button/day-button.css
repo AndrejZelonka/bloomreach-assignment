@@ -1,4 +1,4 @@
-@import '../../../../../../styles/tokens/components/calendar-month.css';
+@import '../../../../../../styles/tokens/components/date-picker.css';
 
 @layer components {
   :host {
@@ -20,7 +20,7 @@
     position: relative;
 
     &:hover {
-      background: var(--calendar-month-day-hover-bg);
+      background: var(--date-picker-btn-hover-bg);
     }
 
     &.is-today {

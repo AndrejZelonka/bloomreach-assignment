@@ -1,1 +1,17 @@
-<p>presets works!</p>
+<ul class="presets" role="menu" aria-label="Date range presets">
+  @for (preset of presets; track preset.id) {
+    <li role="none">
+      <button
+        type="button"
+        role="menuitemradio"
+        class="preset-btn"
+        [class.is-active]="activePreset()?.id === preset.id"
+        [attr.aria-checked]="activePreset()?.id === preset.id"
+        (click)="onPresetClick(preset)"
+      >
+        <span class="preset-btn__label">{{ preset.label }}</span>
+        <app-icon class="preset-btn__check" name="check" [size]="14" />
+      </button>
+    </li>
+  }
+</ul>

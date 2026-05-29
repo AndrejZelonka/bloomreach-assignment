@@ -5,7 +5,7 @@
   viewBox="0 0 24 24"
   fill="none"
   stroke="currentColor"
-  [attr.stroke-width]="2"
+  [attr.stroke-width]="strokeWidth()"
   stroke-linecap="round"
   stroke-linejoin="round"
   aria-hidden="true"
@@ -20,6 +20,9 @@
     }
     @case ('chevron-down') {
       <polyline points="6 9 12 15 18 9" />
+    }
+    @case ('check') {
+      <polyline points="20 6 9 17 4 12" />
     }
   }
 </svg>

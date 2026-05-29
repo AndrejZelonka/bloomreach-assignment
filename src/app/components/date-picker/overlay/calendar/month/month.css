@@ -1,4 +1,4 @@
-@import '../../../../../../styles/tokens/components/calendar-month.css';
+@import '../../../../../../styles/tokens/components/date-picker.css';
 
 @layer components {
   :host {
@@ -26,5 +26,4 @@
     line-height: var(--calendar-month-weekday-line-height);
     color: var(--calendar-month-weekday-color);
   }
-
 }
